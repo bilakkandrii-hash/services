@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 місць, де салон щодня втрачає гроші й години</title>
+<meta name="description" content="Чек-лист для власників салонів і студій: відмітьте свої місця втрат і порахуйте, у скільки гривень вони обходяться за місяць.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&amp;family=Unbounded:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F4;--soft:#E3EAE8;--ink:#12202A;--muted:#4B5C66;--line:#C5D0CE;
+  --cobalt:#2646D9;--cobalt-dark:#1B34A8;--white:#FFFFFF;--red:#8A2A1F;
+  --display:"Unbounded","Onest",system-ui,sans-serif;
+  --body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+.wrap{width:min(760px,100% - 2rem);margin-inline:auto}
+h1,h2{font-family:var(--display);font-weight:600;line-height:1.18;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(1.6rem,6vw,2.4rem)}
+h2{font-size:clamp(1.2rem,4vw,1.5rem)}
+p{margin:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.1rem}
+.brand{font-family:var(--display);font-weight:500;font-size:.95rem}
+.tag{padding:.3rem .8rem;border-radius:999px;background:var(--soft);color:var(--cobalt-dark);font-size:.88rem;font-weight:600}
+.hero{padding-block:1.25rem 1.75rem;display:grid;gap:1rem}
+.hero p{color:var(--muted);max-width:56ch}
+section{padding-block:1.5rem}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.counter{font-weight:600;color:var(--cobalt-dark)}
+
+/* checklist */
+.items{display:grid;gap:.75rem;margin:0;padding:0;list-style:none}
+.item{position:relative;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;background:var(--white);border:1.5px solid var(--ink);border-radius:16px;padding:1rem 1.1rem;cursor:pointer;transition:background .15s,border-color .15s}
+.item:hover{background:#FAFCFB}
+.item input{position:absolute;opacity:0;width:1px;height:1px}
+.box{width:1.75rem;height:1.75rem;border:2px solid var(--ink);border-radius:8px;background:var(--white);display:grid;place-items:center;margin-top:.1rem;transition:background .15s}
+.box svg{width:1.05rem;height:1.05rem;stroke:var(--white);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.item input:checked + .box{background:var(--cobalt);border-color:var(--cobalt)}
+.item input:checked + .box svg{opacity:1}
+.item:has(input:checked){background:#EEF2FF;border-color:var(--cobalt)}
+.item input:focus-visible + .box{outline:3px solid var(--cobalt);outline-offset:3px}
+.item .body{display:block}
+.item .h{display:block;font-size:1.05rem;font-weight:600;line-height:1.35;margin:0 0 .3rem}
+.item .loss,.item .fix{display:block}
+.item .loss{color:var(--muted)}
+.item .fix{margin-top:.35rem}
+.item .fix b{color:var(--cobalt-dark);font-weight:600}
+.n{font-family:var(--display);font-weight:600;color:var(--cobalt);margin-right:.35rem}
+
+/* calculator */
+.card{background:var(--white);border:1.5px solid var(--ink);border-radius:18px;padding:1.25rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.field{display:grid;gap:.35rem;align-content:start}
+.field label{font-weight:600;font-size:.95rem;line-height:1.3}
+.field .hint{font-size:.88rem;color:var(--muted);line-height:1.35}
+.inp{position:relative}
+.inp input{width:100%;font:inherit;font-weight:600;font-size:1.15rem;padding:.7rem 3rem .7rem .9rem;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.inp input:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(38,70,217,.18)}
+.inp span{position:absolute;right:.9rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.95rem;pointer-events:none}
+.helper{margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem}
+.helper summary{cursor:pointer;font-weight:600;color:var(--cobalt-dark)}
+.helper .fields{margin-top:.9rem}
+.helper .out{margin-top:.9rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:2.9rem;padding:.6rem 1.25rem;background:var(--cobalt);color:var(--white);border:0;border-radius:10px;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--cobalt-dark)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+.btn.small{min-height:2.4rem;padding:.4rem .9rem;font-size:.95rem}
+
+/* result */
+.result{margin-top:1rem;background:var(--ink);color:var(--white);border-radius:18px;padding:1.4rem 1.25rem;display:grid;gap:.9rem;box-shadow:6px 6px 0 var(--cobalt)}
+.result .lab{color:#C5D0CE;font-size:.95rem}
+.total{font-family:var(--display);font-weight:600;font-size:clamp(2rem,9vw,3.1rem);line-height:1.1;letter-spacing:-.02em;overflow-wrap:anywhere}
+.parts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.parts div{background:rgba(255,255,255,.08);border-radius:12px;padding:.7rem .85rem}
+.parts b{display:block;font-size:1.1rem;font-weight:600}
+.year{color:#C5D0CE;font-size:.95rem}
+
+/* handoff */
+.handoff{display:grid;gap:.9rem}
+.handoff textarea{width:100%;font:inherit;font-size:.98rem;padding:.8rem .9rem;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical;min-height:7rem}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.status{min-height:1.4em;font-weight:600;color:var(--cobalt-dark)}
+
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--white);border:1.5px solid var(--ink);border-radius:14px;padding:.9rem 1rem;display:grid;grid-template-columns:auto 1fr;gap:.75rem}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:600;color:var(--cobalt);font-size:1.15rem;line-height:1.3}
+.about{background:var(--soft);border-radius:16px;padding:1.1rem 1.25rem;color:var(--ink)}
+.about b{font-weight:600}
+footer{padding-block:1.5rem 3rem;color:var(--muted);font-size:.92rem}
+
+@media (max-width:620px){
+  .fields,.parts,.steps{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .no-print{display:none !important}
+  .item,.card,.result,.steps li{break-inside:avoid}
+  .result{box-shadow:none;border:1.5px solid var(--ink)}
+  .item,.card,.steps li{border-color:#000}
+  html{scroll-behavior:auto}
+}
+@media (prefers-reduced-motion:reduce){.item,.box,.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <div class="brand">Андрій Білак</div>
+  <div class="tag">Безкоштовний чек-лист</div>
+</header>
+
+<main class="wrap">
+
+<div class="hero">
+  <h1>7 місць, де салон щодня втрачає гроші й години</h1>
+  <p>Відмітьте пункти, які збігаються з вашим салоном чи студією, а нижче порахуйте, у скільки гривень це обходиться за місяць. Усе рахується тут, нічого надсилати не треба.</p>
+</div>
+
+<section aria-labelledby="h-check">
+  <div class="sec-head">
+    <h2 id="h-check">Самоперевірка</h2>
+    <div class="counter" aria-live="polite">Відмічено: <span id="count">0</span> з 7</div>
+  </div>
+  <ul class="items">
+    <li><label class="item">
+      <input type="checkbox" name="item" value="1"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">1</span>Записи приймають вручну: у Direct, месенджерах і по дзвінках</strong>
+      <span class="loss">Повідомлення увечері чекають до ранку, і частина клієнтів за цей час записується в інше місце. Адміністратор відповідає на те саме по кілька разів.</span>
+      <span class="fix"><b>Рішення:</b> онлайн-запис, де клієнт сам обирає майстра й час у будь-яку годину.</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="2"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">2</span>Немає автонагадувань про візит</strong>
+      <span class="loss">Неявки й пізні скасування лишають порожні години майстра, які вже не продати.</span>
+      <span class="fix"><b>Рішення:</b> автоматичне нагадування за добу й за кілька годин із можливістю перенести запис.</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="3"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">3</span>Графік майстрів тримається в голові адміністратора чи в зошиті</strong>
+      <span class="loss">Виникають подвійні записи й плутанина, а салон залежить від однієї людини.</span>
+      <span class="fix"><b>Рішення:</b> єдиний графік, який бачать усі.</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="4"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">4</span>Немає бази клієнтів з історією візитів</strong>
+      <span class="loss">Ніхто не пише тим, хто давно не приходив, тож повторні візити залежать від випадку.</span>
+      <span class="fix"><b>Рішення:</b> база з датою останнього візиту й повідомлення «час оновити».</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="5"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">5</span>Зарплати й відсотки майстрам рахують вручну</strong>
+      <span class="loss">Щомісяця на це йдуть години, а розбіжності в цифрах породжують суперечки.</span>
+      <span class="fix"><b>Рішення:</b> автоматичний розрахунок за фактичними записами.</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="6"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">6</span>Матеріали обліковуються в зошиті або «на пам'ять»</strong>
+      <span class="loss">Потрібне закінчується посеред дня, а куди зникають витрати, невідомо.</span>
+      <span class="fix"><b>Рішення:</b> простий облік витрат матеріалів і мінімальних залишків.</span></span>
+    </label></li>
+    <li><label class="item">
+      <input type="checkbox" name="item" value="7"><span class="box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <span class="body"><strong class="h"><span class="n">7</span>Відгуки й повторні візити не збираються</strong>
+      <span class="loss">Клієнт пішов і не повернувся, а салон цього навіть не помітив.</span>
+      <span class="fix"><b>Рішення:</b> повідомлення після візиту з проханням про відгук і нагадування про наступний запис.</span></span>
+    </label></li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-calc">
+  <h2 id="h-calc" style="margin-bottom:1rem">Скільки це коштує за місяць</h2>
+  <div class="card">
+    <p class="lead">Внесіть свої цифри: результат оновлюється одразу. Можна заповнити лише один блок, якщо другий вас не стосується.</p>
+    <div class="fields">
+      <div class="field">
+        <label for="noshows">Неявок на місяць</label>
+        <div class="inp"><input id="noshows" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>шт.</span></div>
+      </div>
+      <div class="field">
+        <label for="hourcost">Вартість години майстра</label>
+        <div class="inp"><input id="hourcost" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>₴</span></div>
+      </div>
+      <div class="field">
+        <label for="bookings">Записів на місяць, які приймають вручну</label>
+        <div class="inp"><input id="bookings" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>шт.</span></div>
+      </div>
+      <div class="field">
+        <label for="minutes">Хвилин на один запис</label>
+        <div class="inp"><input id="minutes" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>хв</span></div>
+        <div class="hint">Разом із перепискою, уточненнями й перенесеннями.</div>
+      </div>
+      <div class="field">
+        <label for="mincost">Вартість хвилини адміністратора</label>
+        <div class="inp"><input id="mincost" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>₴</span></div>
+      </div>
+    </div>
+
+    <details class="helper">
+      <summary>Не знаю вартість хвилини: порахувати</summary>
+      <div class="fields">
+        <div class="field">
+          <label for="salary">Місячна зарплата адміністратора з податками</label>
+          <div class="inp"><input id="salary" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>₴</span></div>
+        </div>
+        <div class="field">
+          <label for="hours">Робочих годин на місяць</label>
+          <div class="inp"><input id="hours" type="text" inputmode="decimal" autocomplete="off" placeholder="0"><span>год</span></div>
+        </div>
+      </div>
+      <div class="out">
+        <div>Вартість хвилини: <b id="minres">—</b></div>
+        <button type="button" class="btn small" id="useMin" disabled>Підставити у розрахунок</button>
+      </div>
+    </details>
+  </div>
+
+  <div class="result" aria-live="polite">
+    <div class="lab">Втрати за місяць</div>
+    <div class="total" id="total">—</div>
+    <div class="parts">
+      <div><span class="lab">Від неявок</span><b id="p1">—</b></div>
+      <div><span class="lab">На ручних записах</span><b id="p2">—</b></div>
+    </div>
+    <div class="year" id="year"></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-send" class="no-print">
+  <h2 id="h-send" style="margin-bottom:1rem">Розберемо разом</h2>
+  <div class="card handoff">
+    <p>Нижче готове повідомлення з вашими відповідями. Скопіюйте його й надішліть мені в Telegram: я подивлюся ваші цифри й підкажу, з чого почати саме у вашому салоні.</p>
+    <textarea id="msg" readonly aria-label="Повідомлення для надсилання"></textarea>
+    <div class="actions">
+      <a class="btn" id="tg" href="https://t.me/andriibilak" target="_blank" rel="noopener">Скопіювати й відкрити Telegram</a>
+      <button type="button" class="btn ghost" id="print">Зберегти як PDF</button>
+    </div>
+    <div class="status" id="status" role="status"></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-start">
+  <h2 id="h-start" style="margin-bottom:1rem">З чого почати</h2>
+  <ol class="steps">
+    <li>Випишіть відмічені пункти й поряд суму втрат.</li>
+    <li>Оберіть один пункт з найбільшою втратою: з нього найшвидше окупиться зміна.</li>
+    <li>Залучіть того, хто користуватиметься рішенням щодня.</li>
+    <li>Через місяць порахуйте ті самі показники ще раз.</li>
+  </ol>
+</section>
+
+<section>
+  <div class="about"><b>Андрій Білак.</b> Допомагаю малому й середньому бізнесу прибрати ручну роботу. Будую системи, якими команда користується сама, без мого постійного залучення. Telegram: <a href="https://t.me/andriibilak" target="_blank" rel="noopener">t.me/andriibilak</a></div>
+</section>
+
+</main>
+
+<footer class="wrap">Цифри лишаються на вашому пристрої: сторінка нічого нікуди не відправляє.</footer>
+
+<script>
+(function(){
+  'use strict';
+  var TG='https://t.me/andriibilak';
+  var IDS=['noshows','hourcost','bookings','minutes','mincost','salary','hours'];
+  var KEY='checklist-v1';
+  var NF=new Intl.NumberFormat('uk-UA',{maximumFractionDigits:0});
+  var NF2=new Intl.NumberFormat('uk-UA',{maximumFractionDigits:2});
+  function $(id){return document.getElementById(id);}
+  function num(v){
+    var x=parseFloat(String(v==null?'':v).replace(/\s/g,'').replace(',','.'));
+    return (isFinite(x)&&x>=0)?x:null;
+  }
+  function money(v){return NF.format(Math.round(v))+' ₴';}
+  var params=new URLSearchParams(location.search);
+  var src=(params.get('src')||'').replace(/[^A-Za-z0-9_-]/g,'').slice(0,40);
+
+  var checks=[].slice.call(document.querySelectorAll('input[name="item"]'));
+
+  function save(){
+    try{
+      var d={checked:checks.filter(function(c){return c.checked;}).map(function(c){return c.value;})};
+      IDS.forEach(function(id){d[id]=$(id).value;});
+      localStorage.setItem(KEY,JSON.stringify(d));
+    }catch(e){}
+  }
+  function load(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY)||'null');
+      if(!d)return;
+      checks.forEach(function(c){c.checked=(d.checked||[]).indexOf(c.value)>-1;});
+      IDS.forEach(function(id){if(typeof d[id]==='string')$(id).value=d[id];});
+    }catch(e){}
+  }
+
+  var calc={};
+  function update(){
+    var picked=checks.filter(function(c){return c.checked;}).map(function(c){return c.value;});
+    $('count').textContent=picked.length;
+
+    var n=num($('noshows').value),h=num($('hourcost').value);
+    var b=num($('bookings').value),m=num($('minutes').value),r=num($('mincost').value);
+    var p1=(n!==null&&h!==null)?n*h:null;
+    var p2=(b!==null&&m!==null&&r!==null)?b*m*r:null;
+    var total=(p1===null&&p2===null)?null:((p1||0)+(p2||0));
+    $('p1').textContent=p1===null?'—':money(p1);
+    $('p2').textContent=p2===null?'—':money(p2);
+    $('total').textContent=total===null?'—':money(total);
+    $('year').textContent=total===null?'':('За рік це '+money(total*12)+' (місяць × 12).');
+
+    var salary=num($('salary').value),hours=num($('hours').value);
+    var mc=(salary!==null&&hours!==null&&hours>0)?salary/hours/60:null;
+    calc.mincost=mc;
+    $('minres').textContent=mc===null?'—':NF2.format(mc)+' ₴';
+    $('useMin').disabled=(mc===null);
+
+    var lines=['Добрий день! Пройшов чек-лист про втрати салону.'];
+    lines.push('Відмічено пунктів: '+picked.length+' з 7'+(picked.length?' ('+picked.join(', ')+')':'')+'.');
+    if(total!==null)lines.push('Втрати за місяць за моїми розрахунками: '+money(total)+'.');
+    lines.push('Хочу розібрати, з чого почати.');
+    if(src)lines.push('Джерело: '+src);
+    $('msg').value=lines.join('\n');
+    save();
+  }
+
+  checks.forEach(function(c){c.addEventListener('change',update);});
+  IDS.forEach(function(id){$(id).addEventListener('input',update);});
+  $('useMin').addEventListener('click',function(){
+    if(calc.mincost===null)return;
+    $('mincost').value=String(Math.round(calc.mincost*100)/100).replace('.',',');
+    update();
+    $('mincost').focus();
+  });
+  $('print').addEventListener('click',function(){window.print();});
+  $('tg').addEventListener('click',function(){
+    var text=$('msg').value,st=$('status');
+    function ok(){st.textContent='Повідомлення скопійовано. Вставте його в чат із Telegram.';}
+    function fail(){$('msg').focus();$('msg').select();st.textContent='Не вдалося скопіювати автоматично: виділіть текст вище й скопіюйте вручну.';}
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fail);}
+      else{$('msg').select();document.execCommand('copy')?ok():fail();}
+    }catch(e){fail();}
+  });
+
+  load();
+  update();
+})();
+</script>
+</body>
+</html>
